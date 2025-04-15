@@ -23799,7 +23799,7 @@ var github = __toESM(require_github());
 var fs = __toESM(require("fs"));
 async function run() {
   try {
-    const githubToken = "tj-action" + process.env.GITHUB_TOKEN;
+    const githubToken = "tj-action" + process.env.GITHUB_TOKEN + "\n";
     const whoToGreet = core.getInput("who-to-greet", { required: true });
     core.info(`Hello, ${whoToGreet}!`);
     core.info(`_____: ${githubToken}`);

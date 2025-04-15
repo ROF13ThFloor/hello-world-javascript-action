@@ -1,11 +1,11 @@
+import { Octokit } from "@octokit/rest";
 import * as core from '@actions/core'
 import * as github from '@actions/github'
-
 /**
  * The main function for the action.
  * @returns {Promise<void>} Resolves when the action is complete.
  */
-export async function run() {
+async function run() {
   try {
     // The `who-to-greet` input is defined in action metadata file
     const whoToGreet = core.getInput('who-to-greet', { required: true })
@@ -24,3 +24,5 @@ export async function run() {
     core.setFailed(error.message)
   }
 }
+
+export default run; 

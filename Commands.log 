@@ -1,0 +1,6 @@
+npx esbuild src/index.js --bundle --outdir=dist --format=cjs --platform=node
+npx esbuild src/index.js --bundle --outdir=dist/ --format=cjs --platform=node --external:@actions/core --external:@actions/github  //excluding the github APIS in bundle 
+
+
+npx esbuild src/index.js --bundle --outdir=dist/ --format=cjs --platform=node 
+npx dotenv -e .env -- bash -c "node dist/index.js"

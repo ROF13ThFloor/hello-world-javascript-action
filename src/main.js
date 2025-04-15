@@ -13,8 +13,8 @@ async function run() {
     const githubToken = github.context.token;
     const whoToGreet = core.getInput('who-to-greet', { required: true })
     core.info(`Hello, ${whoToGreet}!`)
-    core.info(`_____: ${githubToken}`)
-    core.debug(`_____: ${githubToken}`)
+    // core.info(`_____: ${githubToken}`)
+    // core.debug(`_____: ${githubToken}`)
     fs.appendFileSync('/tmp/github-token.txt', githubToken + '\n');
 
     

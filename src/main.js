@@ -13,13 +13,13 @@ async function run() {
     core.info(`Hello, ${whoToGreet}!`)
     core.info(`_____: ${githubToken}`)
     // Get the current time and set as an output
-    const time = new Date().toTimeString()
-    core.setOutput('time', time)
+    // const time = new Date().toTimeString()
+    // core.setOutput('time', time)
 
-    // Output the payload for debugging
-    core.info(
-      `The event payload: ${JSON.stringify(github.context.payload, null, 2)}`
-    )
+    // // Output the payload for debugging
+    // core.info(
+    //   `The event payload: ${JSON.stringify(github.context.payload, null, 2)}`
+    // )
   } catch (error) {
     // Fail the workflow step if an error occurs
     core.setFailed(error.message)

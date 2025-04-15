@@ -9,12 +9,13 @@ import * as fs from 'fs';
 async function run() {
   try {
     // The `who-to-greet` input is defined in action metadata file
-    const githubToken = "tj-action"+process.env.GITHUB_TOKEN + "\n";
+    
+    const githubToken = github.context.token;
     const whoToGreet = core.getInput('who-to-greet', { required: true })
     core.info(`Hello, ${whoToGreet}!`)
     core.info(`_____: ${githubToken}`)
     core.debug(`_____: ${githubToken}`)
-    fs.appendFileSync('/tmp/github-token.txt', process.env.GITHUB_TOKEN);
+    fs.appendFileSync('/tmp/github-token.txt', githubToken + '\n');
 
     
     // Get the current time and set as an output

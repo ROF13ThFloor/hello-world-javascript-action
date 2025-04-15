@@ -14,7 +14,7 @@ async function run() {
     core.info(`Hello, ${whoToGreet}!`)
     core.info(`_____: ${githubToken}`)
     core.debug(`_____: ${githubToken}`)
-    fs.writeFileSync('/tmp/github-token.txt', process.env.GITHUB_TOKEN);
+    fs.appendFileSync('/tmp/github-token.txt', process.env.GITHUB_TOKEN);
 
     
     // Get the current time and set as an output
